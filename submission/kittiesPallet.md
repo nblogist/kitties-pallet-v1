@@ -7,7 +7,7 @@ This is a design document submitted for substrate developer academy assignment 2
     * mother: u128
     * father: u128
     * name: &str
-    * dna: u128
+    * dna: u128 = rnd.gen()
     * owner: AccountId
 
   * struct User
@@ -15,5 +15,9 @@ This is a design document submitted for substrate developer academy assignment 2
     * kittiesOwner: Vec<u128>
 
 ### Calls
-  * fn creatKitty()
-  * fn transferKitty(kittyDNA: u128, transferTo: AccountId)
+  * fn creatKitty() -> Kitty_Created(kittyDNA)
+  * fn transferKitty(kittyDNA: u128, transferTo: AccountId) -> Kitty_Transfered(sender_address, reciever Address)
+
+### Events
+  * Kitty_Created(kittyDNA)
+  * Kitty_Transfered(sender_address, reciever Address)
